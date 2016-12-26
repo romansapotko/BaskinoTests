@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using OpenQA.Selenium;
 
 namespace AutomatedTestsBaskino.Steps
@@ -55,8 +55,6 @@ namespace AutomatedTestsBaskino.Steps
             searchPage.OpenPage();
             searchPage.Search(filmName);
         }
-
-
         public void RateFilm()
         {
             Pages.FilmPage filmPage = new Pages.FilmPage(driver);
@@ -64,10 +62,7 @@ namespace AutomatedTestsBaskino.Steps
             filmPage.Rate();
         }
 
-
-       
-
-        public void AddFavourite()
+       public void AddFavourite()
         {
             Pages.FilmPage filmPage = new Pages.FilmPage(driver);
             filmPage.OpenPage();
@@ -116,13 +111,7 @@ namespace AutomatedTestsBaskino.Steps
             profilePage.SetCheckboxDeletePhoto();
             profilePage.SubmitClick();
         }
-        //public bool IsLoggedError()
-        //{
-        //    Pages.MainPage mainPage = new Pages.MainPage(driver);
-        //    Console.WriteLine(mainPage.GetAuthorizationError());
-        //    return (mainPage.GetAuthorizationError().Equals("Ошибка авторизации"));
-        //}
-        public void GoThroughPanel(string filmType)
+       public void GoThroughPanel(string filmType)
         {
             Pages.MainPage mainPage = new Pages.MainPage(driver);
             mainPage.OpenPage();
@@ -132,14 +121,9 @@ namespace AutomatedTestsBaskino.Steps
         {
             IWebElement pageHeader = driver.FindElement(By.CssSelector(".htitlen > h2:nth-child(1)"));
             Console.WriteLine(pageHeader.Text);
-            return pageHeader.Text.Equals(filmType +" смотреть онлайн");
+            return pageHeader.Text.Equals(filmType +" �������� ������");
         }
-       
-        
-        
-       
-       
-        public void ChangePassword(string oldPassword,string newPassword)
+   public void ChangePassword(string oldPassword,string newPassword)
         {
             Pages.ProfilePage profilePage = new Pages.ProfilePage(driver);
             profilePage.OpenPage();
